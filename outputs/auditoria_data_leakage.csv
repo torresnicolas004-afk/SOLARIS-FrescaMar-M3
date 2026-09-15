@@ -1,0 +1,12 @@
+﻿feature,decision,justificacion
+id_cliente,EXCLUIR,Identificador único; no es predictor generalizable.
+edad,INCLUIR,Dato de perfil disponible antes de decidir.
+ingreso_mensual,INCLUIR,Dato económico potencialmente disponible antes de decidir.
+nivel_educativo,INCLUIR,Dato de perfil no derivado de la mora.
+ciudad,INCLUIR,Dato geográfico con normalización determinística.
+anio_vinculacion,INCLUIR,Derivado de fecha_vinculacion; antecede la evaluación.
+score_externo,INCLUIR CON CONTROL,Conceptualmente previo; imputación solo en train.
+saldo_actual,EXCLUIR,Temporalidad no demostrable respecto a estado_cuenta.
+cuotas_pagadas,EXCLUIR,Puede incorporar pagos posteriores al instante de predicción.
+cuotas_totales,EXCLUIR,Sin snapshots no se descartan renegociaciones posteriores.
+estado_cuenta,EXCLUIR,Variable objetivo original; nunca entra en X.
