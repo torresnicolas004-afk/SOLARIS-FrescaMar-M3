@@ -1,0 +1,22 @@
+# Entornos Python
+.venv/
+venv/
+test_env/
+
+# Python
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Datos locales
+data/raw/
+
+# Archivos temporales
+*.tmp
+*.log
