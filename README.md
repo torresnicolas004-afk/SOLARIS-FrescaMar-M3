@@ -2,11 +2,28 @@
 
 Prototipo funcional para estimar el riesgo de mora de clientes de **FrescaMar S.A.S.**, desarrollado para la asignatura Proyecto de Ciencia de Datos 2.
 
+## Descripción del problema
+
+FrescaMar S.A.S. necesita identificar anticipadamente qué clientes presentan mayor riesgo de mora para apoyar las decisiones de crédito. Actualmente, la información disponible permite conocer el estado de los clientes, pero se requiere transformar estos datos en una estimación reproducible del riesgo antes de tomar decisiones de crédito.
+
 ## Objetivo
 
 Construir un modelo reproducible de clasificación binaria que permita estimar el riesgo de mora de los clientes y apoyar las decisiones de crédito de FrescaMar S.A.S.
 
 El modelo funciona como herramienta de apoyo a la decisión y no como un sistema automático de aprobación o negación de crédito.
+
+## Solución propuesta
+
+Se construyó un pipeline de Machine Learning que integra:
+
+- Limpieza y normalización de datos.
+- Auditoría de posibles variables con data leakage.
+- Preprocesamiento mediante `Pipeline` y `ColumnTransformer`.
+- Regresión Logística como línea base.
+- `HistGradientBoostingClassifier` como modelo challenger.
+- Optimización de hiperparámetros con Optuna.
+- Selección del threshold mediante predicciones Out-of-Fold.
+- Evaluación final con AUC, precision, recall y F1.
 
 ## Dataset
 
