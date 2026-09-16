@@ -104,14 +104,29 @@ SOLARIS-FrescaMar-M3/
 │       └── SOLARIS_FrescaMar_cartera_credito.csv
 │
 ├── notebooks/
-│   └── M3_PCD2_TorresCastellanos_Prototipo.ipynb
+│   └── M3_PCD2_TorresCastellanos_Prototipo_Final.ipynb
 │
 ├── models/
-│   └── solaris_pipeline_v1.pkl
+│   └── artifacts/
+│       └── solaris_hgb_v1_20260915.pkl
 │
-└── outputs/
-    ├── auditoria_data_leakage.csv
-    └── metricas_m3.json
+├── outputs/
+│   ├── auditoria_data_leakage.csv
+│   └── metricas_m3.json
+│
+└── reports/
+    └── figures/
+        ├── target_distribution.png
+        ├── score_missing_by_target.png
+        ├── numeric_features_by_target.png
+        ├── mora_by_education.png
+        ├── mora_by_city.png
+        ├── correlation_matrix.png
+        ├── model_comparison.png
+        ├── threshold_metrics.png
+        ├── roc_curve.png
+        ├── precision_recall_curve.png
+        └── confusion_matrix.png
 ```
 
 ## Reproducibilidad
@@ -225,9 +240,10 @@ y ejecutarlo completamente.
 
 El prototipo genera, entre otros, los siguientes artefactos:
 
-- `models/solaris_pipeline_v1.pkl`: pipeline final serializado.
-- `outputs/metricas_m3.json`: métricas y configuración final.
+- `models/artifacts/solaris_hgb_v1_20260915.pkl`: pipeline final serializado y versionado.
+- `outputs/metricas_m3.json`: métricas finales del prototipo.
 - `outputs/auditoria_data_leakage.csv`: auditoría de variables utilizadas y excluidas.
+- `reports/figures/`: visualizaciones del EDA, comparación de modelos y evaluación final.
 
 El archivo `.pkl` fue recargado mediante Joblib y se verificó que reproduce correctamente las predicciones del pipeline original.
 
